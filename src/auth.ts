@@ -4,6 +4,7 @@ import Entra from "next-auth/providers/microsoft-entra-id";
 let accountInfoProcessed = false;
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+    secret: process.env.AUTH_,
     providers: [
         Entra({
             clientId: process.env.AUTH_MICROSOFT_ENTRA_ID_ID,
